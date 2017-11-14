@@ -7,39 +7,51 @@
     <script>
 var wins = 0 ;
 var lost = 0 ;
-var lives = 10; //this is the number of lives or guesses the user has
-
-//this is the main bank of words for the user to guess
-var ABCsArray = ["A", "B", "C", "D", "E", "F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
+var lives; //this is the number of lives or guesses the user has
+var ABCsArrayMaster;//this is the main bank of words for the user to guess
+var wordToDisplay;
+var wordChosenArray;
+var DashStringArray;
 
 var wordBankArray = ['ENTERPRISE' , 'SPOCK' , 'KIRK' , 'STARTREK' , 'ROMULANS', 'KLINGONS', 'PHASER', 'PHOTON', 'TRANSPORTER', 'TREK', 'SPACE', 'NACELLE', 'DAYSTROM', 'AUTODESTRUCT', 'DILITHIUM', 'WHALES', 'SANFRANCISCO', 'STARFLEET', 'UHURA', 'SHATNER', 'RODDENBERRY', 'TRIBBLE', 'WESLEY', 'CRUSHER', 'PICARD', 'TROI', 'RIKER', 'FERENGI', 'ANDORIAN', 'VULCAN', 'HUMAN', 'BETAZOID', 'DEFLECTOR'];
+ResetGame();
 
-//put a funciton here asking the user to press a key to start
-var wordToDisplay = wordBankArray[Math.floor(Math.random()*wordBankArray.length)];
-  console.log("The secret word is: "+ wordToDisplay);
- //randomly select one word from the wordbank to which will be masked and displayed to the user
-  var wordChosenArray = Array.from(wordToDisplay); //creates an array from word chosen
+
+function ResetGame(argument) {
+ lives = 10;
+ ABCsArray = ["A", "B", "C", "D", "E", "F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
+
+wordToDisplay = wordBankArray[Math.floor(Math.random()*wordBankArray.length)];
+  console.log("The secret word is: "+ wordToDisplay); //randomly select one word from the wordbank to which will be masked and displayed to the user
+
+  wordChosenArray = Array.from(wordToDisplay); //creates an array from word chosen
   console.log(wordChosenArray);
+DashStringArray = wordChosenArray.fill("-");
+   
+};
+
+
+  //you mght need this  //var ABCsArray = ABCsArrayMaster;
+    //var LettersGuessedByUserReset = ABCsArray.join(" "); // displays a refreshed array of guessed letters
 
 
 
+  //put a funciton here asking the user to press a key to start
+  
 
- 
- 
+
+
   
 
   //creates a dashed string to display in the game
-  var DashStringArray = wordChosenArray.fill("-");
+  
   console.log(DashStringArray);
   console.log(wordChosenArray);
+  console.log(wordToDisplay);
 
+  //everything below here happens when the key is pressed
 
-
-console.log(wordToDisplay);
-
-//everything below here happens when the key is pressed
-
-//listens for the letters typed by the user
+  //listens for the letters typed by the user
 document.onkeyup = function(KeyUpEvent){
  
   //display the players lives  
@@ -53,8 +65,8 @@ document.onkeyup = function(KeyUpEvent){
   //writes the wins to the page so the user can see,
   document.getElementById("Won").innerHTML = wins;
 
-  //writes the wins to the page so the user can see,
-  document.getElementById("Lost").innerHTML = wins;
+  //writes the losses to the page so the user can see,
+  document.getElementById("Lost").innerHTML = lost;
 
   //display the letters guessed by the user
   var replaceLetter = ABCsArray.indexOf(userGuess); 
@@ -73,7 +85,8 @@ document.onkeyup = function(KeyUpEvent){
   lives = lives - 1;
   console.log(lives);//calculates the remaining guesses the player has 
   };
-       
+     
+
   //display the players lives
   document.getElementById("GuessesLeft").innerHTML = lives;
 
@@ -110,23 +123,42 @@ document.onkeyup = function(KeyUpEvent){
 
   //Displays the word chosen when the user incorrectly guesses
   console.log(wordToDisplay);
+
+  // add to the lost counter when lives reach zero
   if (lives === 0){
   document.getElementById("ChosenWord").innerHTML = wordToDisplay; 
-  lost = lost +1;
-  
+  lost = lost + 1;
   };
+
+
+//resets the display once all guesses are gone
+
+if (lives === -1){
+  
+  ResetGame();
+  document.getElementById("GuessesLeft").innerHTML = lives; 
+  document.getElementById("DisplayWord").innerHTML = " "; 
+  document.getElementById("ChosenWord").innerHTML = " "; 
+
+}
+
   //check to see if the player has won
   //calculates wins
 
   var winIndex = Dashwordstring.search("-");
   if (winIndex === -1){
-  wins = wins +1;
- 
+  wins = wins +1; //adds one to the win score
+   ResetGame();
+  document.getElementById("GuessesLeft").innerHTML = lives; 
+  document.getElementById("DisplayWord").innerHTML = " "; 
+  document.getElementById("ChosenWord").innerHTML = " "; 
+ //resets the ABC Array and the letter to guess
+
+  
   };
   console.log(wins);
 
-  return lost;
-  return wins;
+  
 };
 
 </script>
