@@ -1,0 +1,60 @@
+<html>
+
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+
+</head>
+<body style="margin:0px; background-color:black;">
+<div class="container" style=""> <!--style="background-color:gray; border:solid 1px; border-radius:15px;-->
+
+	<div class="row">
+		<div class="col-md-3"></div>
+		
+		<div class="col-md-6" style="background-color:#3d3d3d; padding:0px;">
+			<div class="gray_bevel" style="background-image:url('text1.jpg'); background-color:gray; border:1px solid; border-radius:15px; height:180px; margin:0px 0px 5px 0px;">
+				<div class="display screen" id="DisplayWord" style="background-color: black; border:1px solid; border-radius:15px; height:80%; margin:20px;"></div>
+			</div>
+		</div>
+		
+		<div class="col-md-3"></div>
+	</div>
+
+
+
+
+
+
+
+	<div class="row">
+		<div class="col-md-3"></div>
+		
+		<div class="col-md-6" style="background-color: #3d3d3d; padding:0px;">
+
+			<div class="gray_bevel" style="background-image:url('text1.jpg'); background-color:gray; border:1px solid; border-radius:15px; height:400px; margin:5px 0px 5px 0px;">
+
+				<div class="display screen" id="DisplayWord" style="background-color: black; border:1px solid; border-radius:15px; height:90%; margin:20px;"></div>
+			</div></div>
+
+			<div class="col-md-3"></div>
+			</div>
+
+
+	<div class="row">
+		<div class="col-md-3"></div>
+		
+		<div class="col-md-6" style="background-color:#3d3d3d; padding:0px;">
+
+			<div class="gray_bevel" style="background-image:url('text1.jpg'); background-color:gray; border:1px solid; border-radius:15px; height:520px; margin:5px 0px 0px 0px;">
+
+				<div class="display screen" id="DisplayWord" style="background-color: black; border:1px solid; border-radius:15px; height:80%; margin:20px;"></div>
+
+	<div class="display screen" id="DisplayWord" style="background-color: black; border:1px solid; border-radius:15px; height:10%; margin:20px;"></div>
+			</div>
+		<div class="col-md-3"></div>
+		</div>
+		
+
+
+</div>
+</body>
+</html>

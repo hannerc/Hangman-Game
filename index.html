@@ -2,200 +2,92 @@
 <html lang="en-us">
   <head>
     <meta charset="UTF-8">
-    <title>My First Object</title>
+<title>My First Object</title>
   
-    <script>
-var wins = 0 ;
-var lost = 0 ;
-var lives; //this is the number of lives or guesses the user has
-var ABCsArrayMaster;//this is the main bank of words for the user to guess
-var wordToDisplay;
-var wordChosenArray;
-var DashStringArray;
-
-var wordBankArray = ['ENTERPRISE' , 'SPOCK' , 'KIRK' , 'STARTREK' , 'ROMULANS', 'KLINGONS', 'PHASER', 'PHOTON', 'TRANSPORTER', 'TREK', 'SPACE', 'NACELLE', 'DAYSTROM', 'AUTODESTRUCT', 'DILITHIUM', 'WHALES', 'SANFRANCISCO', 'STARFLEET', 'UHURA', 'SHATNER', 'RODDENBERRY', 'TRIBBLE', 'WESLEY', 'CRUSHER', 'PICARD', 'TROI', 'RIKER', 'FERENGI', 'ANDORIAN', 'VULCAN', 'HUMAN', 'BETAZOID', 'DEFLECTOR'];
-ResetGame();
-
-
-function ResetGame(argument) {
- lives = 10;
- ABCsArray = ["A", "B", "C", "D", "E", "F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
-
-wordToDisplay = wordBankArray[Math.floor(Math.random()*wordBankArray.length)];
-  console.log("The secret word is: "+ wordToDisplay); //randomly select one word from the wordbank to which will be masked and displayed to the user
-
-  wordChosenArray = Array.from(wordToDisplay); //creates an array from word chosen
-  console.log(wordChosenArray);
-DashStringArray = wordChosenArray.fill("-");
-   
-};
-
-
-  //you mght need this  //var ABCsArray = ABCsArrayMaster;
-    //var LettersGuessedByUserReset = ABCsArray.join(" "); // displays a refreshed array of guessed letters
+<script src="assets/JavaScript/JavaScript.js"></script>
 
 
 
-  //put a funciton here asking the user to press a key to start
-  
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
 
-
-  
-
-  //creates a dashed string to display in the game
-  
-  console.log(DashStringArray);
-  console.log(wordChosenArray);
-  console.log(wordToDisplay);
-
-  //everything below here happens when the key is pressed
-
-  //listens for the letters typed by the user
-document.onkeyup = function(KeyUpEvent){
- 
-  //display the players lives  
-  document.getElementById("GuessesLeft").innerHTML = lives;  
-
-  //creates user guess
-  var userGuess = event.key.toUpperCase();
-  console.log(typeof event.key)
-  console.log("The user has guessed: " + userGuess);
- 
-  //writes the wins to the page so the user can see,
-  document.getElementById("Won").innerHTML = wins;
-
-  //writes the losses to the page so the user can see,
-  document.getElementById("Lost").innerHTML = lost;
-
-  //display the letters guessed by the user
-  var replaceLetter = ABCsArray.indexOf(userGuess); 
-
-  //replaces the letters in the ABC array with a space so the user can see what letter to guess next
-  if(~replaceLetter){
-  ABCsArray[replaceLetter] = " * ";
-  };
-
-  var LettersGuessedByUser = ABCsArray.join(" ");
-  document.getElementById("DisplayLetterGuesses").innerHTML = LettersGuessedByUser; //writes the array to the page so the user can see
-
-  var matchIndex = wordToDisplay.search(event.key.toUpperCase()); //searches for the letter within the displayed word and gives the index a match index of -1 means the letter is not present in the word. This is used to calculate the remaining guesses
-
-  if (matchIndex === -1){
-  lives = lives - 1;
-  console.log(lives);//calculates the remaining guesses the player has 
-  };
-     
-
-  //display the players lives
-  document.getElementById("GuessesLeft").innerHTML = lives;
-
-  var matchLetter = wordToDisplay.charAt(matchIndex); //returns the matched letter 
-
-  console.log(matchLetter);
-  console.log(matchIndex);
-  console.log(lives);
-
-
-  //finds the indexes of all the occurances of a letter, dont really need this anymore
-  var indices = [];
-  for(var i=0; i<wordToDisplay.length;i++) {
-    if (wordToDisplay[i] === event.key.toUpperCase()) {
-      indices.push(i);
-  }
-  };
-  console.log(indices);
-  console.log(wordToDisplay)
-
-  //loop to replace dash with matched letter if sucessful, this piece of code took me hours and hours to figure out, I actually cried when it started working, now it looks comicaly simple
-  for(var j=0; j<wordChosenArray.length;j++) {
-  if(matchLetter === wordToDisplay[j]){
-  DashStringArray[j] = matchLetter;
-  };
-  };
-
-  var Dashwordstring = DashStringArray.join(" ");
-  console.log(Dashwordstring);
-
-  //writes the array to the page so the user can see , displays the dashed word
-  document.getElementById("DisplayWord").innerHTML = Dashwordstring;
- 
-
-  //Displays the word chosen when the user incorrectly guesses
-  console.log(wordToDisplay);
-
-  // add to the lost counter when lives reach zero
-  if (lives === 0){
-  document.getElementById("ChosenWord").innerHTML = wordToDisplay; 
-  lost = lost + 1;
-  };
-
-
-//resets the display once all guesses are gone
-
-if (lives === -1){
-  
-  ResetGame();
-  document.getElementById("GuessesLeft").innerHTML = lives; 
-  document.getElementById("DisplayWord").innerHTML = " "; 
-  document.getElementById("ChosenWord").innerHTML = " "; 
-
-}
-
-  //check to see if the player has won
-  //calculates wins
-
-  var winIndex = Dashwordstring.search("-");
-  if (winIndex === -1){
-  wins = wins +1; //adds one to the win score
-   ResetGame();
-  document.getElementById("GuessesLeft").innerHTML = lives; 
-  document.getElementById("DisplayWord").innerHTML = " "; 
-  document.getElementById("ChosenWord").innerHTML = " "; 
- //resets the ABC Array and the letter to guess
-
-  
-  };
-  console.log(wins);
-
-  
-};
-
-</script>
-
-<style type="text/css">
+<link rel="stylesheet" type="text/css" href="assets/CSS/style.css">
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-</style>
+
 </head>
   <body>
-<div><h1>Won:</h1>
-  <h2 style="letter-spacing: 25px" id="Won"></h2>
-</div>
 
-<div><h1>Lost:</h1>
-  <h2 style="letter-spacing: 25px" id="Lost"></h2>
-</div>
+<div class="container" style=""> 
 
-<div class="guesses">
-  <h1>Guesses Remaining:</h1>
-  <h2 style="" id="GuessesLeft"></h2>
-</div>
+ 
+   
+
+
+  <div class="row">
+    <div class="col-md-1"></div>
     
-<div>
-  <h1>Dashed word is: </h1>
-  <h1 style="letter-spacing: 25px" id="DisplayWord"></h1>
+    <div class="col-md-10" style="padding:0px">
+
+      <div class="gray_bevel">
+
+        <div class="displayscreen" style= "height:75%;" id=""> <h2 style="width:50%;" id="DisplayLetterGuesses"></h2></div>
+
+        <div class="displayscreen" style="height:10%;"></div>
+      
+      </div>
+    </div>
+     <div class="col-md-1"></div>
+    </div>
+  </div>
+    
+
+
 </div>
 
-<div>
-  <h1>Word is: </h1>
-  <h1 style="letter-spacing: 25px" id="ChosenWord"></h1>
-</div>
 
-<div><h1>Letters Remaining:</h1>
-  <h2 style="letter-spacing: 25px" id="DisplayLetterGuesses"></h2>
-</div>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+        <!--<h2 id="Won"></h2>
+      
+
+    
+        <h2 id="Lost"></h2>
+      
+
+      <div class="guesses">
+        <h2>Guesses Remaining:</h2>
+        <h2 style="" id="GuessesLeft"></h2>
+      </div>
+   
+
+      
+        <h1 id="ChosenWord"></h1>
+      
+
+  
+        <h2 id="DisplayLetterGuesses"></h2>
+    
+-->
   </body>
 </html>

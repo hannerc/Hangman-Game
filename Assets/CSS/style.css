@@ -1,0 +1,170 @@
+body{
+	background-color: black;
+
+}
+.container{
+	
+}
+
+.buttonA{
+border: solid;
+border-width: 2px;
+border-radius: 35px;
+border-color: black;
+height:30px;
+margin: 10px;
+width:40px;
+background-color: #CCDDFF;
+
+}
+.displayHeader{
+color: yellow;
+margin-top: 50px
+margin-bottom:50px;
+text-align: center;
+letter-spacing: 20px;
+font-size: 300%;
+}
+
+.alertImgs{
+height:100px;
+}
+
+}
+.buttonB{
+border: solid;
+border-width: 2px;
+border-radius: 30px;
+border-color: black;
+height:30px;
+width:40px;
+margin: 10px;
+background-color: #664466;
+
+}
+
+.buttonC{
+border: solid;
+border-width: 2px;
+border-radius: 30px;
+border-color: black;
+height:30px;
+width:40px;
+margin: 10px;
+background-color: #4455bb;
+}
+
+.buttonA:hover{
+
+background-color:#BB4411;
+
+}
+.buttonB:hover{
+
+background-color:#BB6622 ;
+
+}
+.buttonC:hover{
+
+background-color:#000088 ;
+
+}
+
+.buttonA:active{
+
+background-color:#006699 ;
+
+}
+.buttonB:active{
+
+background-color:#CC99CC ;
+
+}
+.buttonC:active{
+
+background-color:gray;
+
+}
+
+
+.displayscreen{
+background-color: #1e1e1e; 
+border:1px solid; 
+border-radius:15px; 
+height:83%; 
+margin:15px;"
+}
+
+.gray_bevel{
+background-image:url('../Images/texture1.jpg');
+background-color:gray; 
+border:1px solid; 
+border-radius:15px; 
+height:80%; 
+margin:5px 0px 0px 0px;
+}
+
+h3{color:cyan;
+}
+
+h2{
+	color: yellow;
+}
+
+#green_alert{
+	margin:auto;
+	color: green;
+	text-align: center;
+}
+
+#GIF_Placeholder{
+border-right: solid 2px;
+border-left: solid 2px;
+border-color: cyan;
+height: 50%
+}
+
+#red_alert{
+	margin:auto;
+	color: red;
+	text-align: center;
+
+}
+
+.main_gif{
+	margin:auto;
+	width:90%;
+	border-radius: 5px;
+	border:solid 1px ;
+	border-color: black;
+}
+
+#GIF_Placeholder{
+	margin:auto;
+}
+
+#DisplayLetterGuesses{
+text-align: justify;
+color: yellow;
+
+}
+
+.thumbnail{
+  background: black;
+}
+.side{
+border: solid;
+border-width: 2px;
+border-radius: 30px;
+border-color: orange;
+}
+
+@keyframes fadeIn { 
+  from { opacity: 0; } 
+}
+
+.AlertStatus {
+	text-align: center
+	color: red;
+    animation: fadeIn 1s infinite alternate;
+}
