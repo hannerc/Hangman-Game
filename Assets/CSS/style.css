@@ -121,7 +121,8 @@ h2{
 border-right: solid 2px;
 border-left: solid 2px;
 border-color: cyan;
-height: 50%
+border-radius: 15px;
+height: 100%;
 }
 
 #red_alert{
@@ -133,7 +134,8 @@ height: 50%
 
 .main_gif{
 	margin:auto;
-	width:90%;
+	width:95%;
+	height:100%;
 	border-radius: 5px;
 	border:solid 1px ;
 	border-color: black;
@@ -145,8 +147,13 @@ height: 50%
 
 #DisplayLetterGuesses{
 text-align: justify;
-color: yellow;
-
+color: yellow; 
+text-justify:distribute;
+border-right: solid 2px;
+border-left: solid 2px;
+border-color: yellow;
+border-radius: 15px;
+padding: 10%;
 }
 
 .thumbnail{
