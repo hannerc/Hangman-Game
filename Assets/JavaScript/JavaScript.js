@@ -7,6 +7,8 @@ var wordToDisplay;
 var wordChosenArray;
 var DashStringArray;
 
+var GIFArrayDamage = ["damage1.gif","damage3.gif","damage4.gif","damage5.gif","damage6.gif","damage7.gif","damage8.gif","damage9.gif","damage10.gif" ];
+ 
 var wordBankArray = ['ENTERPRISE' , 'SPOCK' , 'KIRK' , 'STARTREK' , 'ROMULANS', 'KLINGONS', 'PHASER', 'PHOTON', 'TRANSPORTER', 'TREK', 'SPACE', 'NACELLE', 'DAYSTROM', 'AUTODESTRUCT', 'DILITHIUM', 'WHALES', 'SANFRANCISCO', 'STARFLEET', 'UHURA', 'SHATNER', 'RODDENBERRY', 'TRIBBLE', 'WESLEY', 'CRUSHER', 'PICARD', 'TROI', 'RIKER', 'FERENGI', 'ANDORIAN', 'VULCAN', 'HUMAN', 'BETAZOID', 'DEFLECTOR'];
 ResetGame();
 
@@ -16,7 +18,6 @@ function ResetGame(argument) {
  lives = 10;
  
  ABCsArray = ["A", "B", "C", "D", "E", "F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
-
   wordToDisplay = wordBankArray[Math.floor(Math.random()*wordBankArray.length)];
   
   console.log("The secret word is: "+ wordToDisplay); //randomly select one word from the wordbank to which will then be masked and displayed to the user
@@ -39,6 +40,7 @@ function ResetGame(argument) {
   //listens for the letters typed by the user
 document.onkeyup = function(KeyUpEvent){
  
+
   //display the players lives  
   document.getElementById("GuessesLeft").innerHTML = lives;  
 
@@ -63,7 +65,7 @@ document.onkeyup = function(KeyUpEvent){
 
   var LettersGuessedByUser = ABCsArray.join(" ");
 
-
+  var damageGIF = GIFArrayDamage[Math.floor(Math.random()* GIFArrayDamage.length)];
 
   document.getElementById("DisplayLetterGuesses").innerHTML = LettersGuessedByUser; //writes the array as a string to the page so the user can see which letters remain
 
@@ -72,7 +74,7 @@ document.onkeyup = function(KeyUpEvent){
   if (matchIndex === -1){
   lives = lives - 1;
   console.log(lives);//calculates the remaining guesses the player has 
-  document.getElementById("GIF_Placeholder").innerHTML="<img class='main_gif thumbnail' src='Assets/Images/"+damage1.gif+"' style='border: none;'>";
+  document.getElementById("GIF_Placeholder").innerHTML="<img class='main_gif thumbnail' src='Assets/Images/"+damageGIF+"' style='border: none;'>";
   
   };
      
