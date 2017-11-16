@@ -7,9 +7,11 @@ var wordToDisplay;
 var wordChosenArray;
 var DashStringArray;
 
-var GIFArrayDamage = ["damage1.gif","damage2.gif","damage3.gif","damage4.gif","damage5.gif","damage6.gif","damage7.gif","damage8.gif","damage9.gif","damage10.gif" ];
-var GIFArrayWin = ["win1.gif","win2.gif","win3.gif","win4.gif","win5.gif","win6.gif","win7.gif","win8.gif","win9.gif","win10.gif",]
-
+var GIFArrayDamage = ["damage1.gif","damage3.gif","damage4.gif","damage5.gif","damage6.gif","damage7.gif","damage8.gif","damage9.gif","damage10.gif" ];
+var GIFArrayWin = ["win1.gif","win2.gif","win3.gif","win4.gif","win5.gif"]
+var GIFArrayflyby = ["flyby1.gif","flyby2.gif","flyby3.gif","flyby4.gif","flyby6.gif","wflyby7.gif"]
+var StatusReportW = ["Warp speed!","Engage!","Prepare to beam up!","Make it so!", "Fascinating!", "Full impulse power!"]
+var StatusReportL = ["We're under attack Caprion!" , "Shields weakening!" , "Aux power is offline!" , "Casualty reports coming in from decks 12 and 13!" , "Warp drive is offline!" , "Rerouting power from life support!","Hull breach on deck 16!"]; 
 var wordBankArray = ['ENTERPRISE' , 'SPOCK' , 'KIRK' , 'STARTREK' , 'ROMULANS', 'KLINGONS', 'PHASER', 'PHOTON', 'TRANSPORTER', 'TREK', 'SPACE', 'NACELLE', 'DAYSTROM', 'AUTODESTRUCT', 'DILITHIUM', 'WHALES', 'SANFRANCISCO', 'STARFLEET', 'UHURA', 'SHATNER', 'RODDENBERRY', 'TRIBBLE', 'WESLEY', 'CRUSHER', 'PICARD', 'TROI', 'RIKER', 'FERENGI', 'ANDORIAN', 'VULCAN', 'HUMAN', 'BETAZOID', 'DEFLECTOR'];
 ResetGame();
 
@@ -65,9 +67,11 @@ document.onkeyup = function(KeyUpEvent){
   };
 
   var LettersGuessedByUser = ABCsArray.join(" ");
-
+var StatusReportWin = StatusReportW[Math.floor(Math.random()* StatusReportW.length)];
+  var StatusReportLose = StatusReportL[Math.floor(Math.random()* StatusReportL.length)];
   var damageGIF = GIFArrayDamage[Math.floor(Math.random()* GIFArrayDamage.length)];
   var WinGIF = GIFArrayWin[Math.floor(Math.random()* GIFArrayWin.length)];
+  var flybyGIF = GIFArrayflyby[Math.floor(Math.random()* GIFArrayflyby.length)];
 
   document.getElementById("DisplayLetterGuesses").innerHTML = LettersGuessedByUser; //writes the array as a string to the page so the user can see which letters remain
 
@@ -77,11 +81,13 @@ document.onkeyup = function(KeyUpEvent){
   lives = lives - 1;
   console.log(lives);//calculates the remaining guesses the player has 
   document.getElementById("GIF_Placeholder").innerHTML="<img class='main_gif thumbnail' src='Assets/Images/"+damageGIF+"' style='border: none;'>";
-  
+   document.getElementById("statusReport").innerHTML = "<p class='status'>"+StatusReportLose+"</p>"; 
   };
   
   //displays the Win Gif
-  if (matchIndex !==-1){document.getElementById("GIF_Placeholder").innerHTML="<img class='main_gif thumbnail' src='Assets/Images/"+WinGIF+"' style='border: none;'>";};
+  if (matchIndex !==-1){document.getElementById("GIF_Placeholder").innerHTML="<img class='main_gif thumbnail' src='Assets/Images/"+WinGIF+"' style='border: none;'>";
+ document.getElementById("statusReport").innerHTML = "<p class='status'>"+StatusReportWin+"</p>"; 
+};
   //display the players lives
   document.getElementById("GuessesLeft").innerHTML = (lives)+""+((Math.floor((Math.random() * 9) + 1)))+"%";
 
@@ -133,7 +139,7 @@ if (lives === -1){
   document.getElementById("AlertStatus").innerHTML = "<h3>DESTROYED</h3>";
   document.getElementById("GuessesLeft").innerHTML = " "; 
   document.getElementById("DisplayWord").innerHTML = wordToDisplay; 
- // document.getElementById("ChosenWord").innerHTML = " "; 
+ 
   document.getElementById("DisplayLetterGuesses").innerHTML = " ";
   //display destrct gif here
   document.getElementById("GIF_Placeholder").innerHTML="<img class='main_gif thumbnail' src='Assets/Images/destr1.gif'>";
@@ -149,10 +155,10 @@ if (lives === -1){
   
   document.getElementById("GuessesLeft").innerHTML = "100%"; 
   document.getElementById("DisplayWord").innerHTML = wordToDisplay; 
-  document.getElementById("ChosenWord").innerHTML = " "; 
+ 
   document.getElementById("DisplayLetterGuesses").innerHTML = " ";
-document.getElementById("GIF_Placeholder").innerHTML="<img class='main_gif thumbnail' src='Assets/Images/flyby.gif'>";
-  
+  document.getElementById("GIF_Placeholder").innerHTML="<img class='main_gif thumbnail' src='Assets/Images/"+flybyGIF+"' style='border: none;'>";
+  document.getElementById("AlertStatus").innerHTML = "<h3 id='green_alert'>CONDITION GREEN</h3>";
   //display winning photo here
   ResetGame();
   };
