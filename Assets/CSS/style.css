@@ -21,15 +21,17 @@ background-color: #CCDDFF;
 .status{
 	font-style: italic;;
 	margin-top: 10px;
+	font-size: 150%;
+	color: cyan;
 }
 
 .displayHeader{
 color: yellow;
-margin-top: 75px
+margin-top: 100px
 margin-bottom:50px;
 text-align: center;
 letter-spacing: 9px;
-font-size: 350%;
+font-size: 300%;
 }
 
 .alertImgs{
