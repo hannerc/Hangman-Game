@@ -154,6 +154,7 @@ text-align: center;}
 
 #GIF_Placeholder{
 	margin:auto;
+	background: transparent url('../Images/loading.jpg') center no-repeat;
 }
 
 #DisplayLetterGuesses{
