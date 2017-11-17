@@ -28,7 +28,7 @@ color: yellow;
 margin-top: 75px
 margin-bottom:50px;
 text-align: center;
-letter-spacing: 20px;
+letter-spacing: 9px;
 font-size: 350%;
 }
 
@@ -110,12 +110,13 @@ height:80%;
 margin:5px 0px 0px 0px;
 }
 
-h3{color:cyan;
+h2{color:orange;
+}
+h3{color:orange;
+}
+h4{color:orange;
 }
 
-h2{
-	color: yellow;
-}
 
 #green_alert{
 	margin:auto;
@@ -130,7 +131,8 @@ border-color: cyan;
 border-radius: 15px;
 height: 100%;
 }
-
+h1{color:orange;
+text-align: center;}
 #red_alert{
 	margin:auto;
 	color: red;
@@ -181,4 +183,8 @@ border-color: orange;
 	text-align: center
 	color: red;
     animation: fadeIn 1s infinite alternate;
+    border-left: solid 1px; 
+    border-right: solid 1px;
+    border-color: red;
+    border-radius: 5px;
 }

@@ -9,7 +9,7 @@ var DashStringArray;
 
 var GIFArrayDamage = ["damage1.gif","damage3.gif","damage4.gif","damage5.gif","damage6.gif","damage7.gif","damage8.gif","damage9.gif","damage10.gif" ];
 var GIFArrayWin = ["win1.gif","win2.gif","win3.gif","win4.gif","win5.gif"]
-var GIFArrayflyby = ["flyby1.gif","flyby2.gif","flyby3.gif","flyby4.gif","flyby6.gif","wflyby7.gif"]
+var GIFArrayflyby = ["flyby1.gif","flyby2.gif","flyby3.gif","flyby4.gif","flyby6.gif","flyby7.gif"]
 var StatusReportW = ["Warp speed!","Engage!","Prepare to beam up!","Make it so!", "Fascinating!", "Full impulse power!"]
 var StatusReportL = ["We're under attack Caprion!" , "Shields weakening!" , "Aux power is offline!" , "Casualty reports coming in from decks 12 and 13!" , "Warp drive is offline!" , "Rerouting power from life support!","Hull breach on deck 16!"]; 
 var wordBankArray = ['ENTERPRISE' , 'SPOCK' , 'KIRK' , 'STARTREK' , 'ROMULANS', 'KLINGONS', 'PHASER', 'PHOTON', 'TRANSPORTER', 'TREK', 'SPACE', 'NACELLE', 'DAYSTROM', 'AUTODESTRUCT', 'DILITHIUM', 'WHALES', 'SANFRANCISCO', 'STARFLEET', 'UHURA', 'SHATNER', 'RODDENBERRY', 'TRIBBLE', 'WESLEY', 'CRUSHER', 'PICARD', 'TROI', 'RIKER', 'FERENGI', 'ANDORIAN', 'VULCAN', 'HUMAN', 'BETAZOID', 'DEFLECTOR'];
@@ -136,7 +136,7 @@ var StatusReportWin = StatusReportW[Math.floor(Math.random()* StatusReportW.leng
 
 if (lives === -1){
   
-  document.getElementById("AlertStatus").innerHTML = "<h3>DESTROYED</h3>";
+  document.getElementById("AlertStatus").innerHTML = "<p>DESTROYED</p>";
   document.getElementById("GuessesLeft").innerHTML = " "; 
   document.getElementById("DisplayWord").innerHTML = wordToDisplay; 
  
@@ -158,7 +158,7 @@ if (lives === -1){
  
   document.getElementById("DisplayLetterGuesses").innerHTML = " ";
   document.getElementById("GIF_Placeholder").innerHTML="<img class='main_gif thumbnail' src='Assets/Images/"+flybyGIF+"' style='border: none;'>";
-  document.getElementById("AlertStatus").innerHTML = "<h3 id='green_alert'>CONDITION GREEN</h3>";
+  document.getElementById("AlertStatus").innerHTML = "<p id='green_alert'>CONDITION</p><p id='green_alert'>GREEN</p>";
   //display winning photo here
   ResetGame();
   };
