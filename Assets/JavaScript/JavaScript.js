@@ -67,7 +67,7 @@ document.onkeyup = function(KeyUpEvent){
   };
 
   var LettersGuessedByUser = ABCsArray.join(" ");
-var StatusReportWin = StatusReportW[Math.floor(Math.random()* StatusReportW.length)];
+  var StatusReportWin = StatusReportW[Math.floor(Math.random()* StatusReportW.length)];
   var StatusReportLose = StatusReportL[Math.floor(Math.random()* StatusReportL.length)];
   var damageGIF = GIFArrayDamage[Math.floor(Math.random()* GIFArrayDamage.length)];
   var WinGIF = GIFArrayWin[Math.floor(Math.random()* GIFArrayWin.length)];
@@ -127,10 +127,11 @@ var StatusReportWin = StatusReportW[Math.floor(Math.random()* StatusReportW.leng
 
   // add to the lost counter when lives reach zero
   if (lives === 0){
-  document.getElementById("ChosenWord").innerHTML = wordToDisplay; 
+  document.getElementById("DisplayWord").innerHTML = wordToDisplay; 
   lost = lost + 1;
   };
-
+console.log(lost);
+console.log
 
 //resets the display once all guesses are gone
 
