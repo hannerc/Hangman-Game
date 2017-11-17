@@ -149,7 +149,7 @@ text-align: center;}
 	border-radius: 5px;
 	border:solid 1px ;
 	border-color: black;
-	background: transparent url('./Images/loading.jpg') center no-repeat;
+	background: transparent url('../Images/loading.jpg') center no-repeat;
 }
 
 #GIF_Placeholder{
