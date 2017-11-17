@@ -127,7 +127,7 @@ document.onkeyup = function(KeyUpEvent){
 
   // add to the lost counter when lives reach zero
   if (lives === 0){
-  document.getElementById("DisplayWord").innerHTML = wordToDisplay; 
+  //document.getElementById("DisplayWord").innerHTML = wordToDisplay; 
   lost = lost + 1;
   };
 console.log(lost);
