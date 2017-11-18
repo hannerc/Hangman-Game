@@ -14,49 +14,46 @@
 
 </head>
 <body style="margin:0px; background-color:black;">
+
 <div class="container" style="">
+
 <div class="row">
-<div class="col-md-2"></div>
+
+<div class="col-md-2 col-sm-0"></div>
                                
- <div class="col-md-8" style=" padding:0px;">
- 
- <div class="gray_bevel" style="">
-  <div class="displayscreen container-fluid" id="" style="">
-  	
-<!--Heres where the content gets displayed-->
-<div class="row" style="height:35%;"">
-	<div class="col-xs-12" style="padding-top: 30px;"> <h1 class="displayHeader" id="DisplayWord"></h1></div></div>
-<div class="row" style="height:35%;">	
-	<div class="col-xs-2"><h4>Shields at:</h4><h3 style="text-align: center;" id="GuessesLeft"></h3></div>
-	<div class="col-xs-8"><div id="GIF_Placeholder" style="background: transparent url('Assets/Images/loading.jpg') center no-repeat;"></div></div>
-	<div class="col-xs-2"><div id="AlertStatus" class="AlertStatus"> </div>
-</div>
-</div>
-<div class="row">
-<div class="col-xs-2">
-<div><p>Letters Used</p><p id="DisplayLetterGuesses"></p></div>
-</div>
-<div class="col-xs-8"><img src="Assets/Images/logo.png" height=75 style="float:left; margin-right: 0px; margin-left: 25px; margin-top:8px;" alt="STAR TREK"><h1 style="font-style:italic; color:cyan; padding: 0px; margin-left: 0px; margin-right: 25px; margin-top: 25px;">Hangman!</h1><br><br><p>Press any key to play!</p></div>
-<div class="col-xs-2"><h4>Won:</h4><p id="Won"></p> <h4>Lost:</h4><p id="Lost"></p></div>
-
-</div>
-
-<!--Heres where the content gets displayed-->
-  </div>
- 
-<div class="displayscreen" id="statusReport" style="height:10%">
-<!--Heres where the content gets displayed-->
+<div class="col-md-8 col-sm-12 gray_bevel container-fluid" style="padding:0px margin:auto;">
+	<div class="row">
+		<div class="displayscreen container-fluid col-xs-12" id="" style="width:96%; margin-bottom: 0px;"> 	
+							<!--Heres where the content gets displayed-->
+			<div class="row" style="height:35%">
+				<div class="col-xs-12" style="padding-top: 30px;"> <h1 class="displayHeader" id="DisplayWord"></h1></div>
+			</div>
 	
+			<div class="row" style="height:35%;">	
+				<div class="col-xs-2"><h4>Shields at:</h4><h3 style="text-align: center;" id="GuessesLeft"></h3></div>
+				<div class="col-xs-8" id="GIF_Placeholder" style="background: transparent url('Assets/Images/loading.jpg') center no-repeat;"></div>
+				<div class="col-xs-2" id="AlertStatus" class="AlertStatus"> </div>
+			</div>
+
+			<div class="row">
+				<div class="col-xs-2"><p>Letters Used</p><p id="DisplayLetterGuesses"></p>
+				</div>
+
+				<div class="col-xs-8">
+				<img src="Assets/Images/logo.png" height=75 style="float:left; margin-right: 0px; margin-left: 25px; margin-top:8px;" alt="STAR TREK"><h1 style="font-style:italic; color:cyan; padding: 0px; margin-left: 0px; margin-right: 25px; margin-top: 25px;">Hangman!</h1><br><br><p>Press any key to play!</p>
+				</div>
+				<div class="col-xs-2"><h4>Won:</h4><p id="Won"></p> <h4>Lost:</h4><p id="Lost"></p></div>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
 <!--Heres where the content gets displayed-->
+	<div class="col-xs-12 displayscreen" style="width:96%; height: 55px; margin-bottom: 120px;"><p id="statusReport"></p></div>	
+	</div>
 </div>
-</div></div>
-    <div class="col-md-2"></div>
+<div class="col-md-2 col-sm-0"></div>
 </div>
-                               
- 
- 
-
 </div>
-
 </body>
 </html>
